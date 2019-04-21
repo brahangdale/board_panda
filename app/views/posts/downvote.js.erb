@@ -1,0 +1,6 @@
+
+var upVoteselector = "#post_<%= params[:id] %> .upvote-count";
+jQuery(upVoteselector).html("(<%= @post.votes.where(vote_type: 'upvote').count %>)")
+
+var downVoteselector = "#post_<%= params[:id] %> .downvote-count";
+jQuery(downVoteselector).html("(<%= @post.votes.where(vote_type: 'downvote').count %>)")

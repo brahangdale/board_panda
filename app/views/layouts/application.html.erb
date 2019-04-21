@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>BoardPanda</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+  	<p class="notice" style="position: absolute;"><%= notice %></p>
+    <p class="alert" style="position: absolute;"><%= alert %></p>
+    <%= image_tag("header-background.jpg", :alt => "header-background", style: "width:100%;height:200px;") %>
+    <%= render 'layouts/navigation' %>
+    <!-- < %= render 'layouts/form_layout_navigation'%> --> 
+    <div class="grey-bg">
+      <div class="container">
+        <% flash.each do |name, msg|%>
+          <ul><li><%= msg %></li></ul>
+        <% end%>
+     
+        <%= yield %>
+      </div>
+    </div>
+  </body>
+</html>

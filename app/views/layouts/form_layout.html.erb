@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>BoardPanda</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+  	<p class="notice" style="position: absolute;"><%= notice %></p>
+    <p class="alert" style="position: absolute;"><%= alert %></p>
+    <%= render 'layouts/form_layout_navigation' %>
+    <!-- < %= render 'layouts/navigation1'%> -->
+    <div class="container">
+      <%= yield %>
+    </div>
+  </body>
+</html>

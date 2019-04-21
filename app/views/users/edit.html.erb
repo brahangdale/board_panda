@@ -1,0 +1,79 @@
+
+<%= form_for @user  do  |f| %>
+<div class="row">
+	<div class="col-xs-12">
+		<% if @user.errors.any? %>
+		<h2>The following errors prevented the post from getting created</h2>
+		<ul>
+			<% @post.errors.full_messages.each do |msg| %>
+			<li><%= msg %></li>
+			<% end %>
+		</ul>
+		<% end %>
+	</div>
+</div>
+<h1>Profile Information </h1>
+<div class="row">
+	<div class="col-xs-12 well">
+		<div class="col-xs-8">
+			<div class="form-group ">
+				<div class="profile-img">
+					<%= image_tag(@user.image.url) %>
+					<div class="pull-right">
+						<a href="javascript:void(0);" id="edit-profile-img-btn" onclick="$('#user_image').click();" class="edit-profile-image" style="position: relative; z-index: 0;"><i></i>Edit</a>
+					</div>
+				</div>
+				<%= f.file_field :image, class: "form-control hide" %>
+			</div>
+
+			<div class="form-group">
+				<%= f.text_field :display_name, class: "form-control", placeholder: "Display name", autofocus: true %>
+			</div>
+			<div class="form-group">
+				<%= f.text_area :bio, rows: 6, class: "form-control", placeholder: "bio", autofocus: true %>
+			</div>
+			<div class="form-group">
+				<%= f.url_field :website_url, class: "form-control", placeholder: "website_url", autofocus: true %>
+			</div>
+			<div class="form-group">
+				<%= f.url_field :facebook_url, class: "form-control", placeholder: "facebook_url", autofocus: true %>
+			</div>
+			<div class="form-group">
+				<%= f.url_field :twitter_url, class: "form-control", placeholder: "twitter_url", autofocus: true %>
+			</div>
+			<div class="form-group">
+				<%= f.url_field :flikker_url, class: "form-control", placeholder: "flikker_url", autofocus: true %>
+			</div>
+		</div>
+		<div class="col-xs-4">
+		</div>
+		<div class="col-xs-12">
+			<div class="form-group pull-right">
+				<%= f.submit "Save", class: "btn btn-primary btn-lg" %>				
+			</div>
+		</div>
+		
+
+	</div>
+
+</div>
+
+<% end %>
+
+<script type="text/javascript">
+  $(function() {
+    $("input:file").change(function (e){
+
+      if (this.files && this.files[0]) {
+        var reader = new FileReader();
+
+        reader.onload = function (e) {
+            $('.profile-img img').attr('src', e.target.result);
+        }
+
+        reader.readAsDataURL(this.files[0]);
+    	}
+
+    });
+  });
+</script>

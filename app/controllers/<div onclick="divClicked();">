@@ -1,0 +1,59 @@
+<div onclick="divClicked();">
+
+	<a href="" onclick="test()" id="abc"></a>
+</div>
+
+
+<div id="xyz">
+	<div>
+		<div class='123'>
+		<div>
+
+	</div>
+
+</div>
+
+<div class='123'>
+</div>
+
+<script>
+
+
+	jQuery('#xyz .123')
+	jQuery('#abc').click(function(event) {
+
+	})
+
+	jQuery('#abc').on('click', function(event) {
+		event.prevetDefault();
+		event.stopPropagation();
+
+		var url = jQuery(this).attr('herf')
+
+		jQuery.ajax({
+
+			url: url,
+			method: 'get',
+			data: {
+
+			},
+			success: function(){
+
+			},
+			error: function(){
+
+
+			}
+
+		})
+
+	})
+
+	function test (event) {
+
+	}
+
+	function divClicked({
+
+	})
+</script>

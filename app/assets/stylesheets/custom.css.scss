@@ -1,0 +1,115 @@
+$navbar-default-bg: #ffffff	;
+
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+.nav navbar-nav li
+{
+	 text-decoration: none;
+    list-style-type: none;
+    padding: 10px;
+    margin-left: 10px;
+    border: 2px solid green;
+}
+.grey-bg{
+	background: #d2d2d2
+}
+.well{
+	background-color: #fff;
+}
+
+.profile-img img
+{
+	width: 150px;
+	height: 150px;
+	border: 1px solid;
+	padding: 10px;
+}
+.profile-img{
+	width: 200px;
+}
+.m-top20{
+	margin-top: 20px;
+}
+.m-top10
+{
+	margin-top: 10px;
+}
+.m-bottom20{
+	margin-bottom: 20px;
+}
+.image
+{
+	width: 100;
+	height: 100;
+	margin-bottom: 10px;
+}
+.clearfix
+{
+	display: block;
+}
+.author-box
+{
+	width: 100;
+	background: #fff;
+	margin-bottom: 19px;
+	border-radius: 3px;
+}
+
+.show-img img
+{
+	float: left;
+	max-width: 7.375em;
+	width: 100%;
+	height: auto;
+	margin: 2.313em 0 1.875em 2.313em;
+	border-radius: 100%;
+}
+.info-container
+{
+	float: right;
+	width: 67%;
+	margin-top: 1.75em;
+	margin-left: 1.75em;
+}
+ 
+.info-container h2
+{
+	display: block;
+	font-family: Merriweather,serif;
+	font-weight: 700;
+	font-size: 2em;
+	line-height: 1.2;
+	margin: 0;
+	word-break: break-word;
+}
+.community
+{
+	display: block;
+	color: red;
+	font-weight: 700;
+	font-size:  1em;
+}
+.panda
+{
+	display: block;
+	font-weight: 500;
+	font-size: 1em;
+	color: #949494;
+}
+.post-actions{
+	font-size: 16px;
+}
+.m-left10{
+	margin-left: 10px;
+}
+.img image
+{
+	width: 500px;
+	max-height: 500px;
+}
+.m-left10
+{
+	margin-left: 10px;
+}

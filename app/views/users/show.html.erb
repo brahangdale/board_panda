@@ -1,0 +1,121 @@
+
+<div class="col-xs-12 well m-top20">
+	<div class="col-xs-8">
+		<div class="form-group">
+			<div class="show-img" nopin="nopin">
+					<%= image_tag(@user.image.url) %>
+					<div class="info-container">
+					 <h2>Bhagyashri Rahangdale</h2>
+					 <p class="community">Community Member</p>
+					 <p class="panda">This lazy Panda forgot to write something  about itself </p>
+					</div>
+					<div class="pull-right">
+					 <%= link_to 'Edit', edit_user_path %>
+					</div>
+				</div>
+		</div>
+	</div>
+</div>
+<div class="row">
+	<div class="col-xs-12">
+		<div class="col-xs-8">
+			<div class="my-profiletabs">
+				<ul>
+					<li class="active">
+						<a href="#post-tab-content" >Posts (<%= @posts.count %>)</a>
+						<% @posts.each do |post| %>
+						<div class="well">
+							<% if post.image.present? %>
+
+							<%= image_tag(post.image.url, class: 'img-responsive') %>
+
+							<% else %>
+
+							<%= image_tag("dummy_img.png") %>
+
+							<% end %>
+
+							<h1><%=  post.name %></h1>
+
+							<p>  <%= post.description %></p>
+
+							<%= link_to 'Edit post', edit_post_path(post),   class: "btn btn-primary btn-lg" %>
+							<%= link_to 'Delete post', post_path(post), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-danger btn-lg" %>
+						</div>
+
+						<% end %>
+					</li>
+					<li>
+						<a href="#list-addition-tab-content">List Additions</a>
+					</li>
+					<li>
+						<a href="#upvotes-tab-content">Up Votes</a>
+					</li>
+				</ul>
+
+				<div class="col-xs-12 m-top20 ">
+					<div class="tab-content active" id="post-tab-content">
+					</div>
+
+					<div class="tab-content" id="list-addition-tab-content">
+						List Additions Content
+					</div>
+
+					<div class="tab-content" id="upvotes-tab-content">
+						Up Votes Content
+					</div>
+				</div>
+       </div>
+			</div> 
+		</div>
+	</div>
+
+
+
+<script>
+	$( function() {
+		$( "#tabs" ).tabs();
+	});
+
+	$('.my-profiletabs ul li a').click(function(event){
+		event.preventDefault();
+		event.stopPropagation();
+		$(".my-profiletabs ul li.active").removeClass('active');
+		$(".my-profiletabs .tab-content.active").removeClass('active');
+
+		$(this).parent('li').addClass('active');
+		var selector = $(this).attr('href');
+
+		$(selector).addClass('active');
+
+	})
+</script>
+
+<style type="text/css">
+.tab-content
+{
+	display: none;
+}
+.tab-content.active{
+	display: block;
+}
+
+.my-profiletabs ul li
+{
+	display: inline;
+	margin-right: 20px;
+	font-size: 16px;
+	font-weight: bold;
+}
+
+.my-profiletabs ul li a{
+	text-decoration: none;
+	text-transform: uppercase;
+	color: #949494;
+}
+
+.my-profiletabs ul li.active {
+	border-bottom: 3px solid #d74b1f;
+	padding-bottom: 5px;
+}
+</style>
